@@ -332,12 +332,12 @@ class LNWatcher(PrintError):
         return min(map(self.get_tx_mined_status, set_of_txids))
 
 
-    def print_tx_broadcast_result(self, name, res):
+    def print_tx_broadcast_result(self, res):
         error, msg = res
         if error:
-            self.print_error('{} broadcast failed: {}'.format(name, msg))
+            self.print_error('broadcast failed: {}'.format(msg))
         else:
-            self.print_error('{} broadcast succeeded'.format(name))
+            self.print_error('broadcast succeeded: {}'.format(msg))
 
 
 
