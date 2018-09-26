@@ -333,11 +333,8 @@ class LNWatcher(PrintError):
 
 
     def print_tx_broadcast_result(self, res):
-        error, msg = res
-        if error:
-            self.print_error('broadcast failed: {}'.format(msg))
-        else:
-            self.print_error('broadcast succeeded: {}'.format(msg))
+        success, msg = res
+        self.print_error('broadcast: {}, {}'.format('success' if success else 'failure', msg))
 
 
 
